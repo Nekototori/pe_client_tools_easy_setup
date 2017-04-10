@@ -49,7 +49,11 @@ class pe_client_tools_easy_setup::linux  (
   }
 
   file { $client_tools_package_path: 
+    ensure => 'file',
     source => $client_tools_package_source,
+    owner  => '0',
+    group  => '0',
+    mode   => '0644',
   }
 
   package { 'client tools rpm':
