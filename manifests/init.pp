@@ -15,10 +15,11 @@
 #
 # @example
 #    class { 'pe_client_tools_easy_setup':
-#      pe_server_certname => 'master.inf.puppet.vm',
-#      client_tools_package_path => '/root/pe-client-tools-16.5.2-1.el7.x86_64.rpm',
-#      access_token_path => '~/.puppetlabs/token',
-#    }
+#      pe_server_certname          => 'master.inf.puppet.vm',
+#      client_tools_package_path   => '/root/pe-client-tools-16.5.2-1.el7.x86_64.rpm',
+#      access_token_path           => '~/.puppetlabs/token',
+#      client_tools_package_source => puppet:///modules/pe-client-tools-16.5.2-1.el7.x86_64.rpm',
+#     }
 #
 # Authors
 # -------
@@ -32,6 +33,7 @@
 #
 class pe_client_tools_easy_setup (
     String $client_tools_package_path,
+    String $client_tools_package_source,
     String $pe_server_certname = 'master',
     String $access_token_path  = '~/.puppetlabs/token',
 ){
